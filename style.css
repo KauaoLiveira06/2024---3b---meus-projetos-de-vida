@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Merriweather&display=swap');
+
+
+:root{
+    --azul-escuro: #2B2D42;
+    --azul-claro: #8D99AE;
+    --branco: #EDF2F4;
+    --vermelho: #EF233C;
+    --font-titulo: "Merriweather", monospace;
+    --font-texto: "Anta", serif;
+}
+
+body{
+    background-color: var(--vermelho);
+}
