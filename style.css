@@ -5,18 +5,19 @@
     --azul-escuro: #2B2D42;
     --azul-claro: #8D99AE;
     --branco: #EDF2F4;
-    --vermelho: #EF233C;
+    --verde-agua: #1cb1a4;
+    --preto: #000000;
     --font-titulo: "Merriweather", monospace;
     --font-texto: "Anta", serif;
 }
 
-body{
-    background-color: var(--vermelho);
-    color: var(--azul-claro);
+body {
+    background-color: var(--verde-agua);
+    color: var(--azul-escuro);
     font-family: var(--font-texto);
 }
 
-.conteudo-principal{
+.conteudo-principal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,4 +25,60 @@ body{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+}
+
+.titulo-principal {
+    text-align: left;
+    width: 100%;
+    font-size: 36px;
+}
+
+.titulo-principal span {
+    color: var(--azul-escuro);
+}
+
+.botao {
+    font-family: var(--font-texto);
+    font-size: 18px;
+    background-color: var(--azul-claro);
+    color: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    border-bottom: 4px solid var(--azul-escuro);
+    border-right: 4px solid var(--azul-escuro);
+    border-left: 4px solid var(--azul-escuro);
+    border-top: 4px solid var(--azul-escuro);
+
+}
+
+.botoes {
+    display: block;
+}
+
+.botao:first-child{
+    border-radius: 40px 40px 0 0;
+}
+
+.botao:last-child{
+    border-radius: 0 0 40px 40px;
+}
+
+.ativo{
+    background-color: var(--azul-escuro);
+    border-bottom: 4px solid var(--preto);
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
+    .botao:first-child{
+        border-radius: 40px 0 0 0;
+    }
+    .botao:last-child{
+        border-radius: 0 40px 0 0;
+    }
 }
