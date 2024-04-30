@@ -9,31 +9,26 @@ const tempoObjetivo04 = new Date("2024-11-31T00:00:00");
 
 const tempos = [tempoObjetivo01, tempoObjetivo02, tempoObjetivo03, tempoObjetivo04];
 
-function atualizaCronometro() {
-    for (let i = 0; i < tempos.length; i++) {
-        contadores[i].textContent = calculaTempo(tempos[i])
-    }
-}
-
 
 function comecaCronometro() {
-    atualizaCronometro ();
+    atualizaCronometro();
     setInterval(atualizaCronometro, 1000)
 }
 
-//comecaCronometro ();
+comecaCronometro ();
 
 
-for (let i = 0; i < botoes.length; i++) {
+for (let i=0; i<botoes.length; i++) {
+
     botoes[i].onclick = function () {
 
-        for (j = 0; j < botoes.length; j++) {
-            botoes[j].classList.remove('ativo')
-            textos[j].classList.remove('ativo')
+        for (let j=0; j<botoes.length; j++) {
+            botoes[j].classList.remove("ativo")
+            textos[j].classList.remove("ativo")
         }
 
-        botoes[i].classList.add('ativo')
-        textos[i].classList.add('ativo')
+        botoes[i].classList.add("ativo")
+        textos[i].classList.add("ativo")
     }
 }
 
@@ -51,9 +46,19 @@ function calculaTempo(tempoObjetivo) {
     minutos %= 60;
     horas %= 24;
 
-    if (tempoFinal > 0){
-    return dia + " Dias " + horas + " Horas " + minutos + " Minutos " + segundos + " Segundos "
+    if (tempoFinal > 0) {
+        return [dia, horas, minutos, segundos];
     } else {
-        return "Prazo Finalizado"
+        return [0, 0, 0, 0];
     }
+}
+
+function atualizaCronometro() {
+
+        for (let i=0; i<contadores.length;i++) {
+            document.getElementById("dias"+i).textContent = calculaTempo(tempos[i])[0];
+            document.getElementById("horas"+i).textContent = calculaTempo(tempos[i])[1];
+            document.getElementById("mins"+i).textContent = calculaTempo(tempos[i])[2];
+            document.getElementById("segs"+i).textContent = calculaTempo(tempos[i])[3];
+        }
 }

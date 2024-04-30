@@ -7,6 +7,7 @@
     --branco: #EDF2F4;
     --verde-agua: #1cb1a4;
     --preto: #000000;
+    --cinza-cinza:#737a85;
     --font-titulo: "Merriweather", monospace;
     --font-texto: "Anta", serif;
 }
@@ -40,7 +41,7 @@ body {
 .botao {
     font-family: var(--font-texto);
     font-size: 18px;
-    background-color: var(--azul-claro);
+    background-color: var(--azul-claro  );
     color: var(--preto);
     display: flex;
     justify-content: center;
@@ -50,7 +51,7 @@ body {
     border-bottom: 4px solid var(--verde-agua);
     border-right: 4px solid var(--verde-agua);
     border-left: 4px solid var(--verde-agua);
-    border-top: 4px solid var(--verde-agua);
+    border-top: none;
 
 }
 
@@ -62,13 +63,10 @@ body {
     border-radius: 40px 40px 0 0;
 }
 
-.botao:last-child{
-    border-radius: 0 0 40px 40px;
-}
-
 .botao.ativo{
-    background-color: var(--azul-escuro);
-    border-bottom: 4px solid var(--preto);
+    background-color: var(--cinza-cinza);
+    border-bottom: 4px solid var(--cinza-cinza);
+    color: black;
 }
 
 .abas-textos{
@@ -93,11 +91,13 @@ body {
 .aba-conteudo-titulo-secundario{
     text-align: center;
     color: var(--verde-agua);
+    text-transform: uppercase;
 }
 
 .contador{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .contador-digito{
@@ -118,7 +118,7 @@ body {
     margin: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 790px) {
     .botoes {
         display: flex;
     }
